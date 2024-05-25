@@ -2,20 +2,9 @@ My NixOS configuration.
 
 
 ```
-                         .       .
-                        / `.   .' \
-                .---.  <    > <    >  .---.
-                |    \  \ - ~ ~ - /  /    |
-                 ~-..-~             ~-..-~
-             \~~~\.'                    `./~~~/
-   .-~~^-.    \__/                        \__/
- .'  O    \     /               /       \  \
-(_____,    `._.'               |         }  \/~~~/
- `----.          /       }     |        /    \__/
-       `-.      |       /      |       /      `. ,~~|
-           ~-.__|      /_ - ~ ^|      /- _      `..-'   f: f:
-                |     /        |     /     ~-.     `-. _||_||_
-                |_____|        |_____|         ~ - . _ _ _ _ _>
+ __________________________
+< I'm sad. Send 50 dollars >
+ --------------------------
 
 ```
 
@@ -42,3 +31,5 @@ git reset --hard HEAD~1 #The same but with the previous commit
 git stash #Stashes local changes so you can return to this state
 
 gamemoderun %command% #Launch option for Steam games
+
+sudo nixos-rebuild switch -I nixos-conf=configuration.nix

@@ -14,24 +14,23 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  programs.sway.enable = true; #wayland
-
-  #kernel for wifi
+  #kernel
   boot.kernelPackages = pkgs.linuxPackages_latest; 
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-# Enable OpenGL
+
   hardware.opengl = {
     enable = true;
-    driSupport = true;
     driSupport32Bit = true;
   };
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-    # of just the bare essentials.
-   
+
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    nvidiaSettings = true;
+  };
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -56,11 +55,11 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-   # Enable the Whatever Desktop Environment.
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # Enable the KDE Plasma Desktop Environment.
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
-  # Configure keymap in X11 (no need to chante to lucie)
+  # Configure keymap in X11
   services.xserver = {
     layout = "ch";
     xkbVariant = "";
@@ -69,21 +68,8 @@
   # Configure console keymap
   console.keyMap = "sg";
 
-  # Enable CUPS to print documents.   (I have no printer, no need) L.
+  # Enable CUPS to print documents.
   services.printing.enable = true;
-
-      # Open ports required for KDE Connect   (FROM Lucie) L. reboot check-yes
-  networking.firewall = {
-    enable = true;
-    allowedTCPPortRanges = [
-      { from = 1714; to = 1764; } # KDE Connect
-    ];
-    allowedUDPPortRanges = [
-      { from = 1714; to = 1764; } # KDE Connect
-    ];
-  };
-
-  programs.kdeconnect.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -113,7 +99,7 @@
     packages = with pkgs; [
       kate
     #  thunderbird
-    ]; #shell = pkgs.zsh;   # FROM Lucie L. Causes Error
+    ];
   };
 
   # Enable automatic login for the user.
@@ -123,17 +109,8 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  #Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ]; # FROM Lucie L. No erorrs. Reboot check -yes
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  #Allow git
-  programs.git.enable = true;  #From Lucie L. R-check -yes
-
-  #Allow adb
-  programs.adb.enable = true;  #From Lucie L. R-check -yes
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -174,9 +151,14 @@
 	vesktop
 	webcord-vencord
 	kate
+    libva-utils
+    vdpauinfo
   ];
 
-  programs.steam = {
+  #Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+programs.steam = {
   enable = true;
   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
@@ -185,27 +167,6 @@
 programs.gamemode.enable = true;
 programs.zsh.enable = true;
 
-  #Waydroid support
-  virtualisation.waydroid.enable = true;
-
-  #OpenSSH support
-  services.openssh = {
-  enable = true;
-  ports = [ 22 ];
-  settings = {
-    PasswordAuthentication = true;
-    AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
-    UseDns = true;
-    X11Forwarding = false;
-    PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-  };
-};
-
-fileSystems."/run/media/luvelyne/5920-B38B" = {
-  device = "/dev/sda1";
-  fsType = "vfat"; # Change this to the filesystem type of your drive
-  options = [ "rw" "defaults" ];
-};
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

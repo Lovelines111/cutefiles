@@ -121,6 +121,7 @@
 			gparted
 			dnsmasq #for downloads
 			pkgs.nvidia-podman
+			pkgs.krita
 		];
 
     # This value determines the Home Manager release that your configuration is
