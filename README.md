@@ -31,7 +31,9 @@ git reset --hard HEAD~1 #The same but with the previous commit
 git stash #Stashes local changes so you can return to this state
 
 gamemoderun %command% #doesn't work anyway XD
+
 mangohuds %command% #for performance metrics
+
 WINE_FULLSCREEN_FSR=1 WINE_FULLSCREEN_FSR_STRENGTH=4 %command% #FSR. The last number is strength. (1-5)
 
 sudo nixos-rebuild switch -I nixos-conf=configuration.nix
