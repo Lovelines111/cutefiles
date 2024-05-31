@@ -136,7 +136,7 @@
   #  wget
 
   #messengerrs
-  	vesktop
+    vesktop
     webcord-vencord
     telegram-desktop
   #essential
@@ -155,7 +155,7 @@
     flameshot
     vlc
     nmap
-	  age
+    age
     ranger
     inetutils
   #text
@@ -163,22 +163,22 @@
     kate
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   #gameing
-	q4wine
-  mangohud
-  gamemode
+    q4wine
+    mangohud
+    gamemode
   #misc
-	pkgs.spotify
-  blahaj
+    pkgs.spotify
+    blahaj
   #windowmanager
-  wayland
-  wl-clipboard    # Clipboard utilities for Wayland
-  waybar         # Status bar for Wayland
-  mako           # Notification daemon for Wayland
+    wayland
+    wl-clipboard    # Clipboard utilities for Wayland
+    waybar         # Status bar for Wayland
+    mako           # Notification daemon for Wayland
   #info
-  wayland-utils
-  vulkan-tools
-  mesa-demos
-  ocl-icd
+    wayland-utils
+    vulkan-tools
+    mesa-demos
+    ocl-icd
   ];
 
   
