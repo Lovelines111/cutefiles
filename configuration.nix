@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      #./cachix.nix
     ];
 
   # Bootloader.
@@ -15,20 +16,40 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   #kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest; 
+  #boot.kernelPackages = pkgs.linuxPackages_latest; 
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  #boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   hardware.opengl = {
     enable = true;
+    driSupport = true;
     driSupport32Bit = true;
   };
 
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    nvidiaSettings = true;
+
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.powerManagement.enable = true;
+  hardware.nvidia.powerManagement.finegrained = false;
+  hardware.nvidia.open = false;
+  hardware.nvidia.nvidiaSettings = true;
+  hardware.nvidia.package = let 
+  rcu_patch = pkgs.fetchpatch {
+    url = "https://github.com/gentoo/gentoo/raw/c64caf53/x11-drivers/nvidia-drivers/files/nvidia-drivers-470.223.02-gpl-pfn_valid.patch";
+    hash = "sha256-eZiQQp2S/asE7MfGvfe6dA/kdCvek9SYa/FFGp24dVg=";
+  };
+
+  in config.boot.kernelPackages.nvidiaPackages.mkDriver {
+    version = "555.42.02";
+    sha256_64bit = "sha256-k7cI3ZDlKp4mT46jMkLaIrc2YUx1lh1wj/J4SVSHWyk=";
+    sha256_aarch64 = lib.fakeSha256;
+    openSha256 = "sha256-rtDxQjClJ+gyrCLvdZlT56YyHQ4sbaL+d5tL4L4VfkA=";
+    settingsSha256 = "sha256-rtDxQjClJ+gyrCLvdZlT56YyHQ4sbaL+d5tL4L4VfkA=";
+    persistencedSha256 = lib.fakeSha256;
+
   };
 
   # Enable networking
@@ -52,24 +73,13 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "ch";
-    xkbVariant = "";
-  };
+  services.dbus.enable = true;
+  services.udisks2.enable = true;
+  services.flatpak.enable = true;
 
   # Configure console keymap
   console.keyMap = "sg";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -102,9 +112,16 @@
     ];
   };
 
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "luvelyne";
+  services.xserver = {
+    layout = "ch";
+    xkbVariant = "";
+    enable = true;
+
+  displayManager.autoLogin.enable = true;
+  displayManager.autoLogin.user = "luvelyne";
+  displayManager.sddm.wayland.enable = true;
+  desktopManager.plasma6.enable = true;
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -117,55 +134,85 @@
   environment.systemPackages = with pkgs; [
   # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+
+  #messengerrs
   	vesktop
     webcord-vencord
-    rPackages.telegram
+    telegram-desktop
+  #essential
     git
     tldr
     neofetch
     cpufetch
-    magic-wormhole-rs
+    screenfetch
     tree
     btop
     htop
-    micro
-    pkgs.spotify
-    telegram-desktop
+    magic-wormhole-rs
     gcc12
     bc
     gnumake42
     flameshot
     vlc
-	ranger
-	p7zip
-	unrar
+    nmap
+	  age
+    ranger
+    inetutils
+  #text
+    micro
+    kate
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  #gameing
 	q4wine
-	inetutils
-	magic-wormhole-rs
-	neofetch
-	screenfetch
-	(nerdfonts.override { fonts = [ "FiraCode" ]; })
-	nmap
-	age
-	blahaj
-	vesktop
-	webcord-vencord
-	kate
-    libva-utils
-    vdpauinfo
+  mangohud
+  gamemode
+  #misc
+	pkgs.spotify
+  blahaj
+  #windowmanager
+  wayland
+  wl-clipboard    # Clipboard utilities for Wayland
+  waybar         # Status bar for Wayland
+  mako           # Notification daemon for Wayland
+  #info
+  wayland-utils
+  vulkan-tools
+  mesa-demos
+  ocl-icd
   ];
+
+  
 
   #Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+      #pkgs.vkd3d-proton
+      # Add any other packages here that you need for compatibility
+    ];
 };
 
-programs.gamemode.enable = true;
-programs.zsh.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+
+  programs.gamemode.enable = true;
+
+  programs.zsh.enable = true;
+
+fileSystems."/mnt/Lib1" = {
+   device = "/dev/disk/by-uuid/5920-B38B";
+   fsType = "vfat";
+   options = [ "defaults"
+     # boot options for fstab. Search up fstab mount options you can use
+     "users" # Allows any user to mount and unmount
+     "nofail" # Prevent system from failing if this drive doesn't mount
+  ];
+};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

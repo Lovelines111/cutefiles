@@ -122,6 +122,9 @@
 			dnsmasq #for downloads
 			pkgs.nvidia-podman
 			pkgs.krita
+			pkgs.wineWowPackages.waylandFull
+			ninja
+			meson
 		];
 
     # This value determines the Home Manager release that your configuration is
