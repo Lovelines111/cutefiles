@@ -1,277 +1,77 @@
 {
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "height": 34,
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "reload_style_on_change": true,
-
-    //==> Modules Layout
-    ///////////////////////////////////////////////////////////////
-	"modules-left": [
-		"custom/l_end","tray","custom/r_end","custom/l_end","hyprland/workspaces","custom/r_end","custom/l_end","wlr/taskbar","custom/r_end","custom/padd"
-	],
-	"modules-center": [
-		"group/system-info"
-	],
-	"modules-right": [
-		"group/system-levels",
-		"custom/l_end","idle_inhibitor","clock","custom/r_end",
-        "custom/l_end","hyprland/language","custom/r_end",
-		"group/control-panel", "custom/padd"
-	],
-    "group/system-info": {
-		"orientation": "horizontal",
-		"modules": [
-			"custom/cpu",
-			"custom/ram",
-			"custom/gpu"
-		]
-	},
-	"group/system-levels": {
-		"orientation": "horizontal",
-		"modules": [
-			"custom/brightness",
-			"custom/battery",
-			"custom/volume",
-			"custom/microphone"
-		]
-	},
-	"group/control-panel": {
-		"orientation": "horizontal",
-		"modules": [
-			"custom/system-update",
-			"custom/do-not-disturb",
-			"custom/vpn",
-			"custom/bluetooth",
-			"custom/networkmanager",
-			"custom/power"
-		]
-	},
-        
-    //==> Left Modules
-    ///////////////////////////////////////////////////////////////
-    "tray": {
-        "icon-size": 18,
-        "rotate": 0,
-        "spacing": 5
-    },
-    "hyprland/workspaces": {
-        "rotate": 0,
-        "all-outputs": true,
-        "active-only": false,
-        "on-click": "activate",
-        "disable-scroll": false,
-        "on-scroll-up": "hyprctl dispatch workspace -1",
-        "on-scroll-down": "hyprctl dispatch workspace +1",
-        "persistent-workspaces": {}
-    },
-	"wlr/taskbar": {
-		"format": "{icon}",
-		"rotate": 0,
-		"icon-size": 18,
-		"icon-theme": "Tela-circle-dracula",
-        "spacing": 0,
-		"tooltip-format": "{title}",
-		"on-click": "activate",
-		"on-click-middle": "close",
-		"app_ids-mapping": {
-			"firefoxdeveloperedition": "firefox-developer-edition"
-		}
-	},
-
-
-
-    //==> Middle Modules
-    ///////////////////////////////////////////////////////////////
-    "custom/cpu": {
-		"exec": "python ~/bin/system-info.py --cpu --normal-color \"#f5c2e7\" --critical-color \"#f38ba8\" | cat",
-		"on-click": "python ~/bin/system-info.py --cpu --click",
-		"return-type": "json",
-		"format": "{}  ",
-		"rotate": 0,
-		"interval": 2,
-		"tooltip": true
-	},
-	"custom/ram": {
-		"exec": "python ~/bin/system-info.py --ram --normal-color \"#fab387\" --critical-color \"#f38ba8\" | cat",
-		"return-type": "json",
-		"format": "{}  ",
-		"rotate": 0,
-		"interval": 2,
-		"tooltip": true
-	},
-	"custom/gpu": {
-		"exec": "python ~/bin/system-info.py --gpu --normal-color \"#f5e0dc\" --critical-color \"#f38ba8\" | cat",
-		"on-click": "python ~/bin/system-info.py --gpu --click",
-		"return-type": "json",
-		"format": "{}",
-		"rotate": 0,
-		"interval": 2,
-		"tooltip": true
-	},
-
-    //==> Right Modules
-    ///////////////////////////////////////////////////////////////
-    "clock": {
-        "format": "{:%H:%M %p}",
-        "rotate": 0,
-        "format-alt": "{:%R | 󰃭 %d·%m·%y}",
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "mode": "month",
-            "mode-mon-col": 3,
-            "on-scroll": 1,
-            "on-click-right": "mode",
-            "format": {
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b>{}</b></span>"
-            }
-        },
-        "actions": {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
+    "name": "Pink Haze",
+    "description": "Theme inspired by Wezterm's pink/red color scheme with cyan accents",
+    "authors": [
+        {
+            "name": "Evelyne",
+            "id": "Evil-in"
         }
+    ],
+    "semanticColors": {
+        "HEADER_PRIMARY": ["#f8b7c2"],
+        "HEADER_SECONDARY": ["#ffb7c5"],
+        "TEXT_NORMAL": ["#f5d7dc"],
+        "TEXT_MUTED": ["#5a3a44"],
+        "TEXT_LINK": ["#ffb7c5"],
+        "TEXT_POSITIVE": ["#63d6e0"],
+        "INTERACTIVE_NORMAL": ["#f5d7dc"],
+        "INTERACTIVE_ACTIVE": ["#ffb7c5"],
+        "INTERACTIVE_MUTED": ["#5a3a44"],
+        "BACKGROUND_PRIMARY": ["#2a1a1f"],
+        "BACKGROUND_SECONDARY": ["#3a2a2f"],
+        "BACKGROUND_SECONDARY_ALT": ["#3a2a2f"],
+        "BACKGROUND_TERTIARY": ["#2a1a1f"],
+        "BACKGROUND_ACCENT": ["#5a3a44"],
+        "BACKGROUND_FLOATING": ["#2a1a1f"],
+        "BACKGROUND_MOBILE_PRIMARY": ["#2a1a1f"],
+        "BACKGROUND_MOBILE_SECONDARY": ["#2a1a1f"],
+        "BACKGROUND_NESTED_FLOATING": ["#2a1a1f"],
+        "BACKGROUND_MESSAGE_HOVER": ["#4a3a3f"],
+        "BACKGROUND_MODIFIER_HOVER": ["#4a3a3f"],
+        "BACKGROUND_MODIFIER_ACTIVE": ["#ffb7c5"],
+        "BACKGROUND_MODIFIER_SELECTED": ["#5a3a44"],
+        "BACKGROUND_MODIFIER_ACCENT": ["#2a1a1f"],
+        "CHANNELTEXTAREA_BACKGROUND": ["#3a2a2f"],
+        "CHANNEL_TEXT_AREA_PLACEHOLDER": ["#5a3a44"],
+        "CHANNELS_DEFAULT": ["#f5d7dc"],
+        "TEXT_DANGER": ["#ff7b9c"],
+        "KEYBOARD": ["#3a2a2f"],
+        "CHANNEL_ICON": ["#ffb7c5"],
+        "CHAT_BACKGROUND": ["#2a1a1f"],
+        "SPOILER_HIDDEN_BACKGROUND": ["#5a3a44"],
+        "SPOILER_REVEALED_BACKGROUND": ["#7a5a64"],
+        "STATUS_POSITIVE": ["#63d6e0"],
+        "STATUS_WARNING": ["#ffe5b5"],
+        "INPUT_PLACEHOLDER_TEXT": ["#5a3a44"],
+        "BUTTON_OUTLINE_BRAND_BACKGROUND": ["#ffb7c5"],
+        "BUTTON_OUTLINE_BRAND_TEXT": ["#2a1a1f"]
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "rotate": 0,
-        "format-icons": {
-            "activated": "󰥔 ",
-            "deactivated": " "
-        }
+    "rawColors": {
+        "PRIMARY_100": "#ffb7c5",
+        "PRIMARY_200": "#5a3a44",
+        "PRIMARY_300": "#ffb7c5",
+        "PRIMARY_360": "#ffb7c5",
+        "PRIMARY_400": "#ffb7c5",
+        "PRIMARY_500": "#5a3a44",
+        "PRIMARY_600": "#2a1a1f",
+        "PRIMARY_630": "#3a2a2f",
+        "PRIMARY_660": "#3a2a2f",
+        "PRIMARY_700": "#2a1a1f",
+        "PRIMARY_800": "#2a1a1f",
+        "BRAND_260": "#ffa7b5",
+        "BRAND_360": "#ffb7c5",
+        "BRAND_500": "#ffa7b5",
+        "BRAND_560": "#ffb7c5",
+        "RED_400": "#ff7b9c",
+        "YELLOW_300": "#ffe5b5",
+        "GREEN_360": "#d4f0d4",
+        "CYAN_400": "#63d6e0",
+        "BLUE_400": "#b5e8ff",
+        "WHITE_500": "#f5d7dc"
     },
-    "custom/battery": {
-        "exec": "sh ~/bin/battery.sh --status --discharged-color \"#f38ba8\" --charged-color \"#a6e3a1\" | cat",
-        "return-type": "raw",
-	    "format": "{}  ",
-        "interval": 3,
-	    "rotate": 0,
-	    "on-click": "sh ~/bin/battery.sh --notify",
-        "tooltip": false
-    },
-    "custom/brightness": {
-        "exec": "sh ~/bin/brightness.sh --status --color \"#61afef\" | cat",
-        "return-type": "raw",
-        "format": "{}  ",
-        "interval": 1,
-        "rotate": 0,
-        "on-scroll-up": "sh ~/bin/brightness.sh --up",
-        "on-scroll-down": "sh ~/bin/brightness.sh --down",
-        "on-click-left": "sh ~/bin/brightness.sh --max",
-        "on-click-right": "sh ~/bin/brightness.sh --min",
-        "tooltip": false
-    },
-	"custom/volume": {
-        "exec": "sh ~/bin/volume.sh --device output --status --disabled-color \"#f38ba8\" --enabled-color \"#a6e3a1\" | cat",
-        "return-type": "raw",
-	    "format": "{}  ",
-        "interval": 1,
-	    "rotate": 0,
-	    "on-click": "sh ~/bin/volume.sh --device output --action toggle",
-	    "on-scroll-up": "sh ~/bin/volume.sh --device output --action increase",
-	    "on-scroll-down": "sh ~/bin/volume.sh --device output --action decrease",
-	    "scroll-step": 5,
-        "tooltip": false
-	},
-    "custom/microphone": {
-        "exec": "sh ~/bin/volume.sh --device input --status --disabled-color \"#f38ba8\" --enabled-color \"#a6e3a1\" | cat",
-        "return-type": "raw",
-	    "format": "{}",
-        "interval": 1,
-	    "rotate": 0,
-	    "on-click": "sh ~/bin/volume.sh --device input --action toggle",
-	    "on-scroll-up": "sh ~/bin/volume.sh --device input --action increase",
-	    "on-scroll-down": "sh ~/bin/volume.sh --device input --action decrease",
-	    "scroll-step": 5,
-        "tooltip": false
-	},
-	"hyprland/language": {
-        "format": "{short} {variant}",
-        "rotate": 0,
-        "min-length": 2,
-        "tooltip": false
-    },
-    "custom/system-update": {
-        "exec": "sh ~/bin/system-update.sh --status --unupdated-color \"#fab387\" --updated-color \"#a6e3a1\" | cat",
-        "return-type": "raw",
-        "format": "{} ",
-        "rotate": 0,
-        "on-click": "CHECKUPDATES_DB=\"/tmp/checkup-db-${UID}-$$\" sh ~/bin/system-update.sh",
-        "interval": 86400,
-        "tooltip": false
-    },
-    "custom/do-not-disturb": {
-        "exec": "sh ~/bin/do-not-disturb.sh --status --disabled-color \"#f38ba8\" --enabled-color \"#a6e3a1\" | cat",
-        "return-type": "raw",
-        "format": "{} ",
-        "interval": 1,
-        "rotate": 0,
-        "on-click": "sh ~/bin/do-not-disturb.sh",
-        "tooltip": false
-    },
-    "custom/vpn": {
-        "exec": "sh ~/bin/rofi-menus/vpn-manager.sh --status --disabled-color \"#f38ba8\" --enabled-color \"#a6e3a1\" | cat",
-        "return-type": "raw",
-        "format": "{} ",
-        "interval": 3,
-        "rotate": 0,
-        "on-click": "sh ~/bin/rofi-menus/vpn-manager.sh",
-        "tooltip": false
-    },
-    "custom/bluetooth": {
-        "format": "<span color=\"#89b4fa\">󰂯  </span>",
-        "interval": 3,
-        "rotate": 0,
-        "on-click": "blueman-manager",
-        "tooltip": false
-    },
-    "custom/networkmanager": {
-        "exec": "sh ~/bin/rofi-menus/network-manager.sh --status --disabled-color \"#f38ba8\" --enabled-color \"#a6e3a1\" | cat",
-        "return-type": "raw",
-        "format": "{}  ",
-        "interval": 3,
-        "rotate": 0,
-        "on-click": "sh ~/bin/rofi-menus/network-manager.sh",
-        "tooltip": false
-    },
-    "custom/power": {
-        "on-click": "sh ~/bin/rofi-menus/powermenu.sh",
-        "format": "<span color=\"#f38ba8\"> </span>",
-        "rotate": 0,
-        "tooltip": false
-    },
-
-	
-    //==> Other Modules
-    ///////////////////////////////////////////////////////////////
-    "custom/l_end": {
-        "format": " ",
-        "interval" : "once",
-        "tooltip": false
-    },
-
-    "custom/r_end": {
-        "format": " ",
-        "interval" : "once",
-        "tooltip": false
-    },
-
-    "custom/padd": {
-        "format": "  ",
-        "interval" : "once",
-        "tooltip": false
-    },
-
-    "custom/padd_bg": {
-        "format": "  ",
-        "interval" : "once",
-        "tooltip": false
+    "spec": 2,
+    "plus": {
+        "version": "0",
+        "iconpack": "DEFAULT"
     }
 }
