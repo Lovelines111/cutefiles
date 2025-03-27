@@ -1,6 +1,6 @@
 {
   "name": "Rosy Cocoa",
-  "description": "A warm and gentle pink-brown theme based on a WezTerm color scheme. Cozy vibes!",
+  "description": "A warm and soft pink-brown theme inspired by a WezTerm color scheme.",
   "authors": [
     {
       "name": "Evelyne",
@@ -16,7 +16,6 @@
     "INTERACTIVE_NORMAL": ["#ffb7c5"],
     "INTERACTIVE_ACTIVE": ["#ffe7ec"],
     "INTERACTIVE_MUTED": ["#5a3a44"],
-
     "BACKGROUND_PRIMARY": ["#2a1a1f"],
     "BACKGROUND_SECONDARY": ["#3a2a2f"],
     "BACKGROUND_SECONDARY_ALT": ["#3a2a2f"],
@@ -26,13 +25,11 @@
     "BACKGROUND_MOBILE_PRIMARY": ["#2a1a1f"],
     "BACKGROUND_MOBILE_SECONDARY": ["#2a1a1f"],
     "BACKGROUND_NESTED_FLOATING": ["#2a1a1f"],
-
     "BACKGROUND_MESSAGE_HOVER": ["#4a3a44"],
     "BACKGROUND_MODIFIER_HOVER": ["#4a3a44"],
     "BACKGROUND_MODIFIER_ACTIVE": ["#7a5a64"],
     "BACKGROUND_MODIFIER_SELECTED": ["#ffb7c5"],
     "BACKGROUND_MODIFIER_ACCENT": ["#2a1a1f"],
-
     "CHANNELTEXTAREA_BACKGROUND": ["#3f2a33"],
     "CHANNEL_TEXT_AREA_PLACEHOLDER": ["#b18e96"],
     "CHANNELS_DEFAULT": ["#f5d7dc"],
@@ -55,12 +52,10 @@
     "PRIMARY_660": "#3a2a2f",
     "PRIMARY_700": "#2a1a1f",
     "PRIMARY_800": "#2a1a1f",
-
     "BRAND_260": "#ffb7c5",
     "BRAND_360": "#ffc7d5",
     "BRAND_500": "#f8b7c2",
     "BRAND_560": "#ffe7ec",
-
     "RED_400": "#ff6b81",
     "YELLOW_300": "#ffe5b5",
     "GREEN_360": "#d4f0d4",
