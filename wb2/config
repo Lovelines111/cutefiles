@@ -38,9 +38,16 @@
         "KEYBOARD": ["#3a2a2f"],
         "CHANNEL_ICON": ["#ffb7c5"],
         "CHAT_BACKGROUND": ["#2a1a1f"],
-     },
+        "SPOILER_HIDDEN_BACKGROUND": ["#5a3a44"],
+        "SPOILER_REVEALED_BACKGROUND": ["#7a5a64"],
+        "STATUS_POSITIVE": ["#63d6e0"],
+        "STATUS_WARNING": ["#ffe5b5"],
+        "INPUT_PLACEHOLDER_TEXT": ["#5a3a44"],
+        "BUTTON_OUTLINE_BRAND_BACKGROUND": ["#ffb7c5"],
+        "BUTTON_OUTLINE_BRAND_TEXT": ["#2a1a1f"]
+    },
     "rawColors": {
-"PRIMARY_100": "#ffb7c5",
+        "PRIMARY_100": "#ffb7c5",
         "PRIMARY_200": "#5a3a44",
         "PRIMARY_300": "#ffb7c5",
         "PRIMARY_360": "#ffb7c5",
@@ -61,7 +68,7 @@
         "CYAN_400": "#63d6e0",
         "BLUE_400": "#b5e8ff",
         "WHITE_500": "#f5d7dc"
-            },
+    },
     "spec": 2,
     "plus": {
         "version": "0",
