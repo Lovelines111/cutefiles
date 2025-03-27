@@ -1,67 +1,62 @@
 {
-    "name": "Pink Haze",
-    "description": "Theme inspired by Wezterm's pink/red color scheme",
-    "authors": [
-        {
-            "name": "Evelyne",
-            "id": "Evi.Beau"
-        }
-    ],
+    "name": "Color Debug Theme",
+    "description": "All elements colored distinctly for debugging",
+    "authors": [{"name": "Evelyne", "id": "Evi.Beau"}],
     "semanticColors": {
-        "HEADER_PRIMARY": ["#001bff"],
-        "HEADER_SECONDARY": ["#001bff"],
-        "TEXT_NORMAL": ["#001bff"],
-        "TEXT_MUTED": ["#001bff"],
-        "TEXT_LINK": ["#001bff"],
-        "INTERACTIVE_NORMAL": ["#001bff"],
-        "INTERACTIVE_ACTIVE": ["#001bff"],
-        "INTERACTIVE_MUTED": ["#001bff"],
-        "BACKGROUND_PRIMARY": ["#001bff"],
-        "BACKGROUND_SECONDARY": ["#001bff"],
-        "BACKGROUND_SECONDARY_ALT": ["#001bff"],
-        "BACKGROUND_TERTIARY": ["#001bff"],
-        "BACKGROUND_ACCENT": ["#001bff"],
-        "BACKGROUND_FLOATING": ["#001bff"],
-        "BACKGROUND_MOBILE_PRIMARY": ["#001bff"],
-        "BACKGROUND_MOBILE_SECONDARY": ["#001bff"],
-        "BACKGROUND_NESTED_FLOATING": ["#001bff"],
-        "BACKGROUND_MESSAGE_HOVER": ["#001bff"],
-        "BACKGROUND_MODIFIER_HOVER": ["#001bff"],
-        "BACKGROUND_MODIFIER_ACTIVE": ["#001bff"],
-        "BACKGROUND_MODIFIER_SELECTED": ["#001bff"],
-        "BACKGROUND_MODIFIER_ACCENT": ["#001bff"],
-        "CHANNELTEXTAREA_BACKGROUND": ["#001bff"],
-        "CHANNEL_TEXT_AREA_PLACEHOLDER": ["#001bff"],
-        "CHANNELS_DEFAULT": ["#001bff"],
-        "TEXT_DANGER": ["#001bff"],
-        "KEYBOARD": ["#001bff"],
-        "CHANNEL_ICON": ["#001bff"],
-        "CHAT_BACKGROUND": ["#001bff"],
-        "SPOILER_HIDDEN_BACKGROUND": ["#001bff"],
-        "SPOILER_REVEALED_BACKGROUND": ["#001bff"]
+        "HEADER_PRIMARY": ["#FF0000"],        // Bright Red - Main header text
+        "HEADER_SECONDARY": ["#00FF00"],      // Bright Green - Secondary header text
+        "TEXT_NORMAL": ["#0000FF"],           // Bright Blue - Normal text
+        "TEXT_MUTED": ["#FFFF00"],            // Yellow - Muted text
+        "TEXT_LINK": ["#FF00FF"],             // Magenta - Links
+        "INTERACTIVE_NORMAL": ["#00FFFF"],    // Cyan - Normal buttons
+        "INTERACTIVE_ACTIVE": ["#FFA500"],    // Orange - Active buttons
+        "INTERACTIVE_MUTED": ["#A52A2A"],     // Brown - Disabled elements
+        "BACKGROUND_PRIMARY": ["#800080"],     // Purple - Main background
+        "BACKGROUND_SECONDARY": ["#008080"],   // Teal - Sidebar
+        "BACKGROUND_SECONDARY_ALT": ["#808000"], // Olive - DM list
+        "BACKGROUND_TERTIARY": ["#FF6347"],    // Tomato - Message box background
+        "BACKGROUND_ACCENT": ["#4B0082"],     // Indigo - Accent areas
+        "BACKGROUND_FLOATING": ["#7FFFD4"],    // Aquamarine - Floating panels
+        "BACKGROUND_MOBILE_PRIMARY": ["#FA8072"], // Salmon - Mobile main
+        "BACKGROUND_MOBILE_SECONDARY": ["#4682B4"], // Steel Blue - Mobile secondary
+        "BACKGROUND_NESTED_FLOATING": ["#D2691E"], // Chocolate - Nested panels
+        "BACKGROUND_MESSAGE_HOVER": ["#20B2AA"], // Light Sea Green - Message hover
+        "BACKGROUND_MODIFIER_HOVER": ["#9370DB"], // Medium Purple - Button hover
+        "BACKGROUND_MODIFIER_ACTIVE": ["#3CB371"], // Medium Sea Green - Active states
+        "BACKGROUND_MODIFIER_SELECTED": ["#B8860B"], // Dark Goldenrod - Selected items
+        "BACKGROUND_MODIFIER_ACCENT": ["#CD5C5C"], // Indian Red - Accent highlights
+        "CHANNELTEXTAREA_BACKGROUND": ["#6495ED"], // Cornflower Blue - Text input
+        "CHANNEL_TEXT_AREA_PLACEHOLDER": ["#FFD700"], // Gold - Placeholder text
+        "CHANNELS_DEFAULT": ["#DA70D6"],      // Orchid - Channel names
+        "TEXT_DANGER": ["#FF4500"],           // Orange Red - Error text
+        "KEYBOARD": ["#6A5ACD"],              // Slate Blue - Keyboard shortcuts
+        "CHANNEL_ICON": ["#32CD32"],          // Lime Green - Channel icons
+        "CHAT_BACKGROUND": ["#87CEFA"],        // Light Sky Blue - Chat background
+        "SPOILER_HIDDEN_BACKGROUND": ["#778899"], // Light Slate Gray - Hidden spoiler
+        "SPOILER_REVEALED_BACKGROUND": ["#B0C4DE"]  // Light Steel Blue - Revealed spoiler
     },
     "rawColors": {
-        "PRIMARY_100": "#0dff00",
-        "PRIMARY_200": "#0dff00",
-        "PRIMARY_300": "#0dff00",
-        "PRIMARY_360": "#0dff00",
-        "PRIMARY_400": "#0dff00",
-        "PRIMARY_500": "#0dff00",
-        "PRIMARY_600": "#0dff00",
-        "PRIMARY_630": "#0dff00",
-        "PRIMARY_660": "#0dff00",
-        "PRIMARY_700": "#0dff00",
-        "PRIMARY_800": "#0dff00",
+        "PRIMARY_100": "#FF1493",              // Deep Pink
+        "PRIMARY_200": "#00BFFF",              // Deep Sky Blue
+        "PRIMARY_300": "#FF8C00",              // Dark Orange
+        "PRIMARY_360": "#9932CC",              // Dark Orchid
+        "PRIMARY_400": "#8FBC8F",              // Dark Sea Green
+        "PRIMARY_500": "#483D8B",              // Dark Slate Blue
+        "PRIMARY_600": "#2F4F4F",              // Dark Slate Gray
+        "PRIMARY_630": "#9400D3",              // Dark Violet
+        "PRIMARY_660": "#FF69B4",              // Hot Pink
+        "PRIMARY_700": "#7B68EE",              // Medium Slate Blue
+        "PRIMARY_800": "#00FA9A",              // Medium Spring Green
 
-        "BRAND_260": "#0dff00",
-        "BRAND_360": "#0dff00",
-        "BRAND_500": "#0dff00",
-        "BRAND_560": "#0dff00",
+        "BRAND_260": "#DC143C",                // Crimson
+        "BRAND_360": "#4169E1",                // Royal Blue
+        "BRAND_500": "#8B4513",                // Saddle Brown
+        "BRAND_560": "#5F9EA0",                // Cadet Blue
 
-        "RED_400": "#0dff00",
-        "YELLOW_300": "#0dff00",
-        "GREEN_360": "#0dff00",
-        "WHITE_500": "#0dff00"
+        "RED_400": "#FF0000",                  // Pure Red
+        "YELLOW_300": "#FFD700",               // Gold
+        "GREEN_360": "#008000",                // Green
+        "WHITE_500": "#FFFFFF"                 // White
     },
     "spec": 2,
     "plus": {
