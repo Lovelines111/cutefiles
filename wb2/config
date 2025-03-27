@@ -1,10 +1,10 @@
 {
     "name": "Pink Haze",
-    "description": "Theme inspired by Wezterm's pink/red color scheme",
+    "description": "Theme inspired by Wezterm's pink/red color scheme with cyan accents",
     "authors": [
         {
             "name": "Evelyne",
-            "id": "Evi.Beau"
+            "id": "Evil-in"
         }
     ],
     "semanticColors": {
@@ -13,13 +13,13 @@
         "TEXT_NORMAL": ["#f5d7dc"],
         "TEXT_MUTED": ["#5a3a44"],
         "TEXT_LINK": ["#ffb7c5"],
-        "TEXT_POSITIVE": ["#63d6e0"],
+        "TEXT_POSITIVE": ["#63d6e0"], 
         "INTERACTIVE_NORMAL": ["#f5d7dc"],
         "INTERACTIVE_ACTIVE": ["#ffb7c5"],
         "INTERACTIVE_MUTED": ["#5a3a44"],
         "BACKGROUND_PRIMARY": ["#2a1a1f"],
         "BACKGROUND_SECONDARY": ["#3a2a2f"],
-        "BACKGROUND_SECONDARY_ALT": ["#3a2a2f"],
+        "BACKGROUND_SECONDARY_ALT": ["#3a2a2f"],  
         "BACKGROUND_TERTIARY": ["#2a1a1f"],
         "BACKGROUND_ACCENT": ["#5a3a44"],
         "BACKGROUND_FLOATING": ["#2a1a1f"],
@@ -40,8 +40,10 @@
         "CHAT_BACKGROUND": ["#2a1a1f"],
         "SPOILER_HIDDEN_BACKGROUND": ["#5a3a44"],
         "SPOILER_REVEALED_BACKGROUND": ["#7a5a64"],
-        "STATUS_POSITIVE": ["#63d6e0"],
-        "STATUS_WARNING": ["#ffe5b5"],
+        
+        // Additional Vendetta-specific colors
+        "STATUS_POSITIVE": ["#63d6e0"],  // Online status
+        "STATUS_WARNING": ["#ffe5b5"],    // Idle status
         "INPUT_PLACEHOLDER_TEXT": ["#5a3a44"],
         "BUTTON_OUTLINE_BRAND_BACKGROUND": ["#ffb7c5"],
         "BUTTON_OUTLINE_BRAND_TEXT": ["#2a1a1f"]
@@ -58,15 +60,17 @@
         "PRIMARY_660": "#3a2a2f",
         "PRIMARY_700": "#2a1a1f",
         "PRIMARY_800": "#2a1a1f",
+
         "BRAND_260": "#ffa7b5",
         "BRAND_360": "#ffb7c5",
         "BRAND_500": "#ffa7b5",
         "BRAND_560": "#ffb7c5",
+
         "RED_400": "#ff7b9c",
         "YELLOW_300": "#ffe5b5",
         "GREEN_360": "#d4f0d4",
-        "CYAN_400": "#63d6e0",
-        "BLUE_400": "#b5e8ff",
+        "CYAN_400": "#63d6e0",  
+        "BLUE_400": "#b5e8ff",  
         "WHITE_500": "#f5d7dc"
     },
     "spec": 2,
