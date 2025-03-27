@@ -41,9 +41,9 @@
         "SPOILER_HIDDEN_BACKGROUND": ["#5a3a44"],
         "SPOILER_REVEALED_BACKGROUND": ["#7a5a64"],
         
-        // Additional Vendetta-specific colors
-        "STATUS_POSITIVE": ["#63d6e0"],  // Online status
-        "STATUS_WARNING": ["#ffe5b5"],    // Idle status
+        
+        "STATUS_POSITIVE": ["#63d6e0"], 
+        "STATUS_WARNING": ["#ffe5b5"],  
         "INPUT_PLACEHOLDER_TEXT": ["#5a3a44"],
         "BUTTON_OUTLINE_BRAND_BACKGROUND": ["#ffb7c5"],
         "BUTTON_OUTLINE_BRAND_TEXT": ["#2a1a1f"]
