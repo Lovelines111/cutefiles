@@ -1,9 +1,13 @@
-{pkgs, ...}:
+{pkgs, config, ...}:
 {
   boot.blacklistedKernelModules = [ "nouveau" ];
   
   services.xserver.videoDrivers = ["nvidia"];
 
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [nvidia-vaapi-driver];
+  };
 
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia-container-toolkit.enable = true;

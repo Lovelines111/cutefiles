@@ -1,33 +1,41 @@
-{ pkgs, lib, stdenv, fetchFromGitHub }:
-
-
-
-
-environment.systemPackages = with pkgs; [
-  space-sddm-theme
-];
-
-stdenv.mkDerivation rec {
-  pname = "space-sddm-theme";
-  version = "1.0";
-
-  src = fetchFromGitHub {
-    owner = "EliverLara";
-    repo = "Space-kde";
-    rev = "master"; #last word in url.
-    sha256 = "0p29ixghrwabydfm67ys5g1plgpvhln3834kwnpnbk4nx8n5hhiz";
-    #nix-prefetch-url --unpack https://github.com/EliverLara/Space-kde/archive/master.tar.gz
+{ pkgs, lib, ...  }:
+let
+  # customConfig = import ./ido-front-sddm.nix;
+  # Copy wallpaper to Nix store first - accessible to SDDM
+  wallpaper = pkgs.copyPathToStore ./Ido-Front.png;
+  
+  # Import config and merge with wallpaper path
+  baseConfig = import ./ido-front-sddm.nix;
+  customConfig = baseConfig // {
+    Background = builtins.toString wallpaper;
   };
 
-  installPhase = ''
-    mkdir -p $out/share/sddm/themes/Space
-    cp -r sddm/Space/* $out/share/sddm/themes/Space/
-  '';
-
-  meta = with lib; {
-    description = "Space SDDM theme for KDE";
-    homepage = "https://github.com/EliverLara/Space-kde";
-    license = licenses.gpl3;
-    platforms = platforms.all;
+  customAstronaut = pkgs.sddm-astronaut.override {
+    embeddedTheme = "astronaut";
+    themeConfig = customConfig;
   };
+in
+{
+  environment.systemPackages = with pkgs; [
+    # sddm-astronaut
+    customAstronaut 
+    kdePackages.qtbase
+    kdePackages.qtwayland
+    kdePackages.qtmultimedia
+  ];
+
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = false;
+    extraPackages = with pkgs; [
+      customAstronaut 
+     ];
+    theme = "sddm-astronaut-theme";
+    settings = {
+      Theme = {
+        Current = "sddm-astronaut-theme";
+      };
+    };
+  };
+  
 }

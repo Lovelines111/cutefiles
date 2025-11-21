@@ -3,16 +3,18 @@
 # Cool themes here:
 #https://github.com/atelierbram/Base2Tone-kitty/blob/main/themes/
 #https://github.com/dexpota/kitty-themes/blob/master/themes/
+#https://github.com/PandaCatPlayz/kitty-themes/blob/master/themes/
 
 let
   # Define the theme URL. Use raw url e.g. "https://raw.githubusercontent.com/path/theme.conf"
-  #URL = "https://raw.githubusercontent.com/dexpota/kitty-themes/refs/heads/master/themes/Ubuntu.conf";
-  URL = "https://raw.githubusercontent.com/atelierbram/Base2Tone-kitty/refs/heads/main/themes/base2tone-lavender-dark.conf";
+URL = "https://raw.githubusercontent.com/atelierbram/Base2Tone-kitty/refs/heads/main/themes/base2tone-lavender-dark.conf";
+
   # Epic automation! don't touch it though
   THEME = pkgs.stdenv.mkDerivation {
     name = "kitty-theme.conf";
     src = builtins.fetchurl {
       url = URL;
+      sha256 = "sha256:1bjjds46cxiicj3q4zdlixmnqhhf88y4r7v8cnzwnq67xiqw0gd9";
     };
     phases = [ "install" ];
     install = ''
