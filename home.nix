@@ -20,10 +20,8 @@ in
   pokemon
   # hyprpannel-cherry
   # fuzzel
-  wezterm-lite
-  helix-lite
-  # walker-lite
-  quickshell-lite
+  wezterm
+  helix
   # DMaterialShell
   Caelestia-shell
   cava

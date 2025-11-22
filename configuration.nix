@@ -36,7 +36,7 @@
       # ./modules/archer-fix.nix
       ./modules/gamemode.nix
       ./modules/openrgb.nix
-      ./modules/gdm.nix
+      # ./modules/gdm.nix
     ];
 
   # Bootloader.

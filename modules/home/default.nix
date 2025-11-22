@@ -10,8 +10,8 @@
   mangohud = ./mangohud.nix;
   obs = ./OBS.nix;
   waybar = ./waybar.nix;
-  wezterm = ./wezterm.nix
-  helix = ./helix.nix
+  wezterm = ./wezterm.nix;
+  helix = ./helix.nix;
   hunt = ./hunt.nix;
   fuzzel = ./fuzzel.nix;
   pokemon = ./pk2home.nix;
