@@ -49,6 +49,7 @@ in
     spotify-player
     webcord-vencord
     vlc
+    zed-editor #Lucie said it's some good editor.
     # cava #controlled with programs.cava
     # obs-studio
     # obs-cmd

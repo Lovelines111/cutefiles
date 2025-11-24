@@ -17,7 +17,7 @@
     # spotify
     rpi-imager
     vlc
-    ffmpeg-full
+    # ffmpeg-full
     mangohud
     piper
     cpu-x

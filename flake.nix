@@ -36,6 +36,7 @@
     # };
 
     caelestia-shell = {
+      # url = "path:/home/luvelyne/Documents/shell";
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
