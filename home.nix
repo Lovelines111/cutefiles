@@ -79,6 +79,7 @@ in
     gpu-screen-recorder
     wlr-randr
     cope
+    themechanger
    ];
 
   home.sessionVariables = {
