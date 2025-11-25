@@ -3,6 +3,7 @@
   gnome = import ./gnome.nix;
   hyprland-home = import ./hyprland-home.nix;
   GTK = import ./GTK.nix;
+  QT = import ./QT.nix;
   cursor = import ./cursor.nix;
   kitty = import ./kitty.nix;
   librewolf = import ./librewolf.nix;

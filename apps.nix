@@ -69,6 +69,7 @@
     rpcs3
     ncdu #disk space analyzer.
     # waydroid-nftables
+    mission-center # Task manager type shit
   ];
 
   programs.gamemode.enable = true;

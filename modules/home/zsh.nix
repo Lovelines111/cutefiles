@@ -32,7 +32,7 @@
       bunnyfetch = "bunnyfetch 2>/dev/null";
       mini="~/mini-moulinette/mini-moul.sh";
       over-vpn = "sudo firejail --net=wlan0 --noprofile";
-      HUNT = "sudo firejail --net=wlp6s0f3u2 --noprofile sudo -u luvelyne steam steam://rungameid/594650";
+      # HUNT = "sudo firejail --net=wlp6s0f3u2 --noprofile sudo -u luvelyne steam steam://rungameid/594650";
       cs2 = "firejail --net=wlp6s0f3u4  --noprofile steam steam://rungameid/730/";
       hunt = "firejail --net=wlp6s0f3u4  --noprofile steam steam://rungameid/594650/";
       unload = "sudo /home/luvelyne/nebula/unload.sh";

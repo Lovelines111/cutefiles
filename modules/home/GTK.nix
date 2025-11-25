@@ -22,15 +22,6 @@
   #     package = pkgs.dracula-theme;
   #   };
   # };
-  # qt = {
-  #   enable = true;
-  #   platformTheme.name = "gtk";
-  #   style = {
-  #     name = "Dracula";
-  #     package = pkgs.dracula-qt5-theme;
-  #   };
-  # };
-
 
 
 

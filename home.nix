@@ -11,6 +11,7 @@ in
   hyprland-home
 	kitty
 	GTK
+	QT
 	cursor #I wanna control it systemwide in the configuration.nix
   zsh
   mangohud
@@ -62,7 +63,7 @@ in
     kdePackages.kdenlive
     r2modman
     ani-cli
-    easyeffects
+    # easyeffects #controlled by a service! Do not add here.
     cmatrix
     # pstream
     pokemonsay
@@ -121,6 +122,9 @@ in
   nixpkgs.config.permittedInsecurePackages = [
     "electron-36.9.5"
   ];
+
+
+  services.easyeffects.enable = true;
 
 
   home.stateVersion = "24.11"; 

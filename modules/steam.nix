@@ -5,6 +5,8 @@
   environment.systemPackages = with pkgs; [
      steam-run
      vulkan-tools
+     vkbasalt
+     vkbasalt-cli
   ];
 
   programs.steam = {

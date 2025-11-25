@@ -51,7 +51,7 @@
       gamemode = false;
       winesync = false;
       engine_short_names = true;
-      exec = "/home/luvelyne/nebula/V2-out.c 35528";
+      # exec = "/home/luvelyne/nebula/V2-out.c 35528";
       fsr = true;
       
       # FPS Section

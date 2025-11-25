@@ -7,7 +7,7 @@
   programs.caelestia = {
     enable = true;
     systemd = {
-      enable = true; # if you prefer starting from your compositor
+      enable = true; # "false" if you prefer starting from your compositor
       target = "graphical-session.target";
       environment = [];
     };
@@ -83,9 +83,19 @@
             id = "power";
             enabled = true;
           }
-        ];
-      };
-    };
+        ]; #bar.entries
+      }; #bar
+    # launcher = {
+    #     actionPrefix = ">";
+    #     actions = [
+    #         {
+    #             name = "cs2";
+    #             command = ["bash firejail --net=wlp6s0f3u4  --noprofile steam steam://rungameid/730/"];
+    #             enabled = true;
+    #         }
+    #     ];
+    # };
+    }; # Settings end
     cli = {
       enable = true; # Also add caelestia-cli to path
       settings = {
@@ -97,5 +107,5 @@
       };
     };
   };
-  
+
 }
